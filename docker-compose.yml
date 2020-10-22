@@ -5,11 +5,15 @@ services:
     depends_on:
       - elasticsearch
       - redis
-    image: exceptionless/app:6.1.0
+    image: exceptionless/app:6.1.4
     environment:
       EX_AppMode: Production
+      # 用于身份认证
+      EX_BaseURL: http://<你的服务器IP或域名>:<外部访问的端口>/#!
       EX_ConnectionStrings__Cache: provider=redis
       EX_ConnectionStrings__Elasticsearch: server=http://elasticsearch:9200
+      EX_ConnectionStrings__Email: smtps://<用户名,使用url encode一下>:<密码>@<smtp域名或ip>:<smtp端口>
+      EX_SmtpFrom: <smtp用户名,不需要做url encode>
       EX_ConnectionStrings__MessageBus: provider=redis
       #EX_ConnectionStrings__Metrics: provider=statsd;server=statsd;
       EX_ConnectionStrings__Queue: provider=redis
@@ -29,13 +33,14 @@ services:
   jobs:
     depends_on:
       - app
-    image: exceptionless/job:6.1.0
+    image: exceptionless/job:6.1.4
     environment:
       EX_AppMode: Production
-      EX_BaseURL: http://localhost:5100
+      EX_BaseURL: http://<你的服务器IP或域名>:<外部访问的端口>/#!
       EX_ConnectionStrings__Cache: provider=redis
       EX_ConnectionStrings__Elasticsearch: server=http://elasticsearch:9200
-      #EX_ConnectionStrings__Email: smtps://user:password@smtp.host.com:587
+      EX_ConnectionStrings__Email: smtps://<用户名,使用url encode一下>:<密码>@<smtp域名或ip>:<smtp端口>
+      EX_SmtpFrom: <smtp用户名,不需要做url encode>
       EX_ConnectionStrings__MessageBus: provider=redis
       #EX_ConnectionStrings__Metrics: provider=statsd;server=statsd;
       EX_ConnectionStrings__Queue: provider=redis
@@ -64,7 +69,7 @@ services:
       - 5601:5601
 
   redis:
-    image: redis:6.0-alpine
+    image: redis
     ports:
       - 6379:6379
 
