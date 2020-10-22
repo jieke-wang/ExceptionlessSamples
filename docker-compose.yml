@@ -6,6 +6,7 @@ services:
       - elasticsearch
       - redis
     image: exceptionless/app:6.1.4
+    restart: always
     environment:
       EX_AppMode: Production
       # 用于身份认证
@@ -34,6 +35,7 @@ services:
     depends_on:
       - app
     image: exceptionless/job:6.1.4
+    restart: always
     environment:
       EX_AppMode: Production
       EX_BaseURL: http://<你的服务器IP或域名>:<外部访问的端口>/#!
@@ -51,6 +53,7 @@ services:
 
   elasticsearch:
     image: exceptionless/elasticsearch:7.9.2
+    restart: always
     environment:
       discovery.type: single-node
       xpack.security.enabled: 'false'
@@ -65,11 +68,13 @@ services:
     depends_on:
       - elasticsearch
     image: docker.elastic.co/kibana/kibana:7.9.2
+    restart: always
     ports:
       - 5601:5601
 
   redis:
     image: redis
+    restart: always
     ports:
       - 6379:6379
 

@@ -24,6 +24,17 @@ namespace ConsoleSamples
             {
                 ex.ToExceptionless().Submit();
             }
+
+            try
+            {
+                var emptyArray = Array.Empty<object>();
+                Console.WriteLine(emptyArray[1]);
+            }
+            catch (System.Exception ex)
+            {
+                ex.ToExceptionless().Submit();
+            }
+
             Console.WriteLine("Hello World!");
         }
     }
