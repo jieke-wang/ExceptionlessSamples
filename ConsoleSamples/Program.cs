@@ -9,8 +9,8 @@ namespace ConsoleSamples
     {
         static void Main(string[] args)
         {
-            ExceptionlessClient.Default.Configuration.ApiKey = "LsioUkJpN7gHPKelib2rGV0XW4l32QHs8eHFOtjT";
-            ExceptionlessClient.Default.Configuration.ServerUrl = "http://192.168.199.129:5000";
+            ExceptionlessClient.Default.Configuration.ApiKey = "ZsEi7aRX1K1JkYSeTtWdLSgJ1kpt1y50xwJJo28s"; // token
+            ExceptionlessClient.Default.Configuration.ServerUrl = "http://192.168.199.129:5000"; // 服务地址
             ExceptionlessClient.Default.Startup();
 
             ExceptionlessClient.Default.SubmitLog("这是一个普通日志记录code:{12345678999}", LogLevel.Info);

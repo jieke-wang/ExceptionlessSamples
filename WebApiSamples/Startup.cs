@@ -35,8 +35,8 @@ namespace WebApiSamples
             app.UseExceptionless(configure =>
             {
                 configure.ApiKey =
-                    "1Kc0NCRKWq5eFmGMIBMcOsOnRZBHlvGmA2OPbZeI";
-                configure.ServerUrl = "http://192.168.199.129:5000";
+                    "XklK6LhfMteMzPsAiLnUs57xgmpkJR7C31s0lrnO"; // token
+                configure.ServerUrl = "http://192.168.199.129:5000"; // ·þÎñµØÖ·
             });
 
             if (env.IsDevelopment())
@@ -44,7 +44,7 @@ namespace WebApiSamples
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

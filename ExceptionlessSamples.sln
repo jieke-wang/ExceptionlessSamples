@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiSamples", "WebApiSamples\WebApiSamples.csproj", "{11FE3A28-4042-46E3-B7C6-7C916713C68E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiSamples", "WebApiSamples\WebApiSamples.csproj", "{11FE3A28-4042-46E3-B7C6-7C916713C68E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSamples", "ConsoleSamples\ConsoleSamples.csproj", "{6514F109-566E-428B-8F2F-D8FAB056E2A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSamples", "ConsoleSamples\ConsoleSamples.csproj", "{6514F109-566E-428B-8F2F-D8FAB056E2A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D4F455D-5D8A-4E23-89A1-54AFCCB8F6BE}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{11FE3A28-4042-46E3-B7C6-7C916713C68E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +47,11 @@ Global
 		{6514F109-566E-428B-8F2F-D8FAB056E2A7}.Release|x64.Build.0 = Release|Any CPU
 		{6514F109-566E-428B-8F2F-D8FAB056E2A7}.Release|x86.ActiveCfg = Release|Any CPU
 		{6514F109-566E-428B-8F2F-D8FAB056E2A7}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAF01B0B-8D9C-456F-8C33-94CA000DA8F0}
 	EndGlobalSection
 EndGlobal
